@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+
 @Component  // 이 클래스를 Spring의 Bean으로 등록하여 다른 클래스에서 자동 주입(Autowired)을 사용할 수 있도록 함
 public class JwtUtil {
 

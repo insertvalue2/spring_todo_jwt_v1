@@ -1,4 +1,4 @@
-package com.tencoding.todo.apiConttroller;
+package com.tencoding.todo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
