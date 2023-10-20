@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tencoding.todo.repository.mapper.UserMapper">
-    <insert id="register">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tencoding.todo.repository.mapper.UserRepository">
+    <insert id="singUp">
         INSERT INTO users (username, email, password) VALUES (#{username}, #{email}, #{password})
     </insert>
 
-    <select id="login" resultType="com.tencoding.todo.repository.model.User">
+    <select id="signin" resultType="com.tencoding.todo.repository.entity.UserEntity">
         SELECT userId, username, email
         FROM users
         WHERE email = #{email} AND password = #{password}
