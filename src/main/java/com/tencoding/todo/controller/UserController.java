@@ -29,7 +29,7 @@ public class UserController {
     }
 
     
-    @PostMapping("/singin")
+    @PostMapping("/signin")
     public ResponseEntity<?> signin(@RequestBody UserDTO userDTO) {
         UserEntity user = userService.singin(userDTO.getEmail(), userDTO.getPassword());
         if (user != null) {
