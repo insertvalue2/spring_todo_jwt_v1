@@ -3,12 +3,12 @@
 
 <mapper namespace="com.tencoding.todo.repository.mapper.UserRepository">
     <insert id="singUp">
-        INSERT INTO users (username, email, password) VALUES (#{username}, #{email}, #{password})
+        INSERT INTO user_tb (username, email, password) VALUES (#{username}, #{email}, #{password})
     </insert>
 
     <select id="signin" resultType="com.tencoding.todo.repository.entity.UserEntity">
         SELECT userId, username, email
-        FROM users
+        FROM user_tb
         WHERE email = #{email} AND password = #{password}
     </select>
 </mapper>
