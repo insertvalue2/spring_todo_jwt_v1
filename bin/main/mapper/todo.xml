@@ -8,10 +8,15 @@
         SELECT * FROM todos;
     </select>
 
-    <!-- Todo 엔터티를 생성하는 쿼리 -->
+    <!-- Todo 엔터티를 생성하는 쿼리(Mybatise 조건문 사용해보기) -->
     <insert id="createTodo" parameterType="com.tencoding.todo.dto.TodoDTO">
-        INSERT INTO todos (title, description, completed)
-        VALUES (#{title}, #{description}, #{completed});
+           INSERT INTO todos (title, completed, userId)
+    		VALUES (#{title}, 
+            <choose>
+                <when test="completed == true">1</when>
+                <otherwise>0</otherwise>
+            </choose>, 
+            #{userId});
     </insert>
 
     <!-- Todo 엔터티를 ID로 검색하는 쿼리 -->
@@ -20,11 +25,11 @@
     </select>
 
     <!-- Todo 엔터티를 업데이트하는 쿼리 -->
-    <update id="updateById" parameterType="com.tencoding.todo.dto.TodoDTO">
-        UPDATE todos
-        SET title = #{title}, description = #{description}, completed = #{completed}
-        WHERE id = #{id};
-    </update>
+	<update id="updateById" parameterType="com.tencoding.todo.dto.TodoDTO">
+	  UPDATE todos
+	  SET title = #{todoDTO.title}, completed = #{todoDTO.completed}
+	  WHERE id = #{todoId}
+	</update>
 
     <!-- ID로 Todo 엔터티를 삭제하는 쿼리 -->
     <delete id="deleteById" parameterType="int">

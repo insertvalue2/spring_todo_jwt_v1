@@ -30,20 +30,22 @@ public class TodoService {
 		return todoRepository.findAllTodos();
 	}
 
-	public void createTodo(TodoDTO todoDto) {
-		todoRepository.createTodo(todoDto);
+	public int createTodo(TodoDTO todoDto) {
+		// TODO - 임시 데이터 할당 
+		todoDto.setUserId(1);
+		return todoRepository.createTodo(todoDto);
 	}
 
 	public TodoEntity readTodoById(Integer todoId) {
 		return todoRepository.findByIdTodo(todoId);
 	}
 
-	public int updateTodoById(Integer todoId, TodoDTO todoDTO) {
-		return todoRepository.updateById(todoDTO);
+	public int updateTodoById(Integer todoId, TodoDTO todoDto) {
+		return todoRepository.updateById(todoId, todoDto);
 	}
 
-	public void deleteTodoById(Integer id) { 
-		todoRepository.deleteById(id);
+	public int deleteTodoById(Integer id) { 
+		return todoRepository.deleteById(id);
 	}
 
 }

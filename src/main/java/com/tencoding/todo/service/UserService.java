@@ -9,7 +9,8 @@ import com.tencoding.todo.repository.mapper.UserRepository;
 
 @Service
 public class UserService {
-
+	
+	//추후 final 변경 예정  
 	@Autowired
     private UserRepository userRepository;
 	

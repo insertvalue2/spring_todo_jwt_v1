@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import lombok.extern.slf4j.Slf4j;
 
 // @Configuration 어노테이션은 해당 클래스가 스프링 프레임워크의 
-// 설정 정보를 담고 있는 클래스임을 나타냅니다. @Component 상속 받고 있음
+// 설정 정보를 담고 있는 클래스임을 나타냅니다.
+// @Component 상속 받고 있음
 @Slf4j
 @Configuration  
 public class FilterConfig {
@@ -18,7 +19,6 @@ public class FilterConfig {
     private JweRequestFilter jweRequestFilter;
 	
 	// FilterRegistrationBean을 생성하여 필터를 등록하는 메서드를 정의합니다.
-	// 
     @Bean
     public FilterRegistrationBean<JweRequestFilter> loggingFilter() {
     	log.error("FilterConfig 초기화 확인 - 서버 구동시 호출 확인");

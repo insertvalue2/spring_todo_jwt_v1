@@ -16,7 +16,7 @@ spring:
     url: jdbc:mysql://localhost:3306/my_todo?serverTimeZone=Asia/Seoul
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: asd123
+    password: asd1234
 
 
 mybatis:
